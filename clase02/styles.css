@@ -1,0 +1,64 @@
+@charset 'UTF-8';
+
+:root {
+  /* Layout */
+  --l_maxWidth: 1100px;
+  /* --- Fonts --- */
+  --f_fontSize: 16px;
+  --f_lineHeight: 1.5;
+  --f_fontWeight: 400;
+  --f_fontStyle: normal;
+  --f-maxCharactersParagraph: 42ch;
+}
+
+/* resetear  */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 1px dashed red;
+}
+
+html {
+  font-size: var(--f_fontSize);
+}
+
+/* --- Comienzo Body --- */
+.Body {
+  max-width: var(--l_maxWidth);
+  margin-inline: auto;
+
+  display: grid;
+
+  font-size: clamp(100%, 1rem + 0.75vw, 25px);
+  line-height: var(--f_lineHeight);
+  font-weight: var(--f_fontWeight);
+  font-style: var(--f_fontStyle);
+}
+
+/* Esto es por renglon */
+p {
+  max-width: var(--f-maxCharactersParagraph);
+}
+/* --- Comienzo Header --- */
+.Header {
+  background-color: blue;
+  container: Header / inline-size;
+}
+
+.Header .navbar {
+  background-color: aqua;
+}
+
+@container Header (max-width: 550px) {
+  .Header .navbar {
+    background-color: pink;
+    margin-inline: 1rem;
+  }
+}
+
+.Header .navbar .logo {
+  background-color: yellow;
+}
+
+/* Comienzo media query */
+/* Pantallas grandes: 1100px Pantallas chicas: 450px */
